@@ -1,0 +1,1681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Camstri Chemistry Lab is dedicated to advancing chemical sciences through innovative research and collaboration.">
+    <meta name="keywords" content="chemistry, research, innovation, lab, science, Camstri">
+    <meta name="author" content="Camstri Chemistry Lab">
+    <meta property="og:title" content="Camstri Chemistry Lab | Innovating the Future of Chemistry">
+    <meta property="og:description" content="Explore groundbreaking chemical research at Camstri Chemistry Lab.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80">
+    <meta property="og:url" content="https://www.camstrichemlab.edu">
+    <title>Camstri Chemistry Lab | Innovating the Future of Chemistry</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            background-color: #f3f4f6;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Navigation */
+        nav {
+    background: linear-gradient(45deg, #2a2a72, #009ffd); /* Bold gradient */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 0.5rem 0;
+    transition: background 0.3s ease;
+}
+
+nav .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.nav-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0.5rem 0;
+}
+
+nav .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav .logo:hover {
+    color: #ffeb3b; /* Highlight on hover */
+}
+
+nav .logo i {
+    color: #ffeb3b; /* Yellow icon */
+    font-size: 1.6rem;
+}
+
+nav .nav-menu {
+    width: 100%;
+}
+
+nav .desktop-menu {
+    display: none;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+nav .desktop-menu a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease;
+    outline: none;
+}
+
+nav .desktop-menu a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 50%;
+    background-color: #ffeb3b;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+nav .desktop-menu a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+nav .desktop-menu a:hover {
+    color: #ffeb3b;
+    transform: translateY(-2px);
+}
+
+nav .desktop-menu a:focus {
+    outline: 2px solid #ffeb3b;
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+nav .mobile-menu-button {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 0;
+    cursor: pointer;
+    padding: 0.6rem;
+    border-radius: 0.3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    transition: background-color 0.3s ease;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+}
+
+.mobile-menu-button span {
+    width: 25px;
+    height: 3px;
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+.mobile-menu-button:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.mobile-menu-button[aria-expanded="true"] span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.mobile-menu-button[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-button[aria-expanded="true"] span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+.mobile-menu-button:focus {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+nav .mobile-menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+    background: linear-gradient(45deg, #2a2a72, #009ffd);
+    padding: 0.8rem 0;
+    -webkit-overflow-scrolling: touch;
+}
+
+nav .mobile-menu.open {
+    max-height: 300px;
+}
+
+nav .mobile-menu .menu-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0 1rem;
+}
+
+nav .mobile-menu a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.6rem 1rem;
+    border-radius: 0.3rem;
+    transition: background-color 0.3s ease;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+}
+
+nav .mobile-menu a:hover {
+    background-color: rgba(255,255,255,0.2);
+    color: #fff;
+}
+
+nav .mobile-menu a:focus {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+@media (max-width: 767px) {
+    nav .mobile-menu-button,
+    nav .mobile-menu a {
+        -webkit-tap-highlight-color: transparent !important;
+        -webkit-touch-callout: none !important;
+        -webkit-user-select: none !important;
+        tap-highlight-color: transparent !important;
+    }
+
+    nav .mobile-menu {
+        -webkit-transform: translateZ(0);
+    }
+
+    nav .mobile-menu-button:focus,
+    nav .mobile-menu a:focus {
+        outline: none !important;
+        box-shadow: none !important;
+    }
+}
+
+@media (min-width: 768px) {
+    nav .container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    nav .nav-header {
+        padding: 0;
+    }
+
+    nav .desktop-menu {
+        display: flex;
+    }
+
+    nav .mobile-menu-button,
+    nav .mobile-menu {
+        display: none;
+    }
+}
+
+@media (min-width: 1024px) {
+    nav .container {
+        padding: 0 2rem;
+    }
+
+    nav .desktop-menu a {
+        padding: 0.5rem 1.2rem;
+    }
+}
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #ffffff;
+            padding: 5rem 1rem;
+            text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            .hero-section {
+                padding: 8rem 1rem;
+            }
+        }
+
+        .hero-section h1 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .hero-section h1 {
+                font-size: 3.75rem;
+            }
+        }
+
+        .hero-section p {
+            font-size: 1.25rem;
+            color: #ffffff;
+            margin-bottom: 2rem;
+            max-width: 48rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @media (min-width: 768px) {
+            .hero-section p {
+                font-size: 1.5rem;
+            }
+        }
+
+        .hero-section .buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        @media (min-width: 640px) {
+            .hero-section .buttons {
+                flex-direction: row;
+            }
+        }
+
+        .hero-section .buttons a {
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .hero-section .buttons .primary {
+            background-color: #2563eb;
+            color: #ffffff;
+        }
+
+        .hero-section .buttons .primary:hover {
+            background-color: #1d4ed8;
+        }
+
+        .hero-section .buttons .secondary {
+            background-color: transparent;
+            border: 2px solid #ffffff;
+            color: #ffffff;
+        }
+
+        .hero-section .buttons .secondary:hover {
+            background-color: #1e40af;
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 5rem 1rem;
+            background-color: #ffffff;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title h2 {
+            font-size: 1.875rem;
+            font-weight: 900;
+            color: #1e3a8a;
+            margin-bottom: 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .section-title h2 {
+                font-size: 2.25rem;
+            }
+        }
+
+        .section-title .divider {
+            width: 5rem;
+            height: 0.25rem;
+            background-color: #2563eb;
+            margin: 0 auto 1.5rem;
+        }
+
+        .section-title p {
+            color: #4b5563;
+            max-width: 48rem;
+            margin: 0 auto;
+        }
+
+        .about-grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .about-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .about-card {
+            background-color: #eff6ff;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+
+        .about-card:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            transform: translateY(-10px);
+        }
+
+        .about-card .icon {
+            color: #2563eb;
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+        }
+
+        .about-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #1e3a8a;
+            margin-bottom: 0.75rem;
+        }
+
+        .about-card p,
+        .about-card ul {
+            color: #4b5563;
+        }
+
+        .about-card ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        /* Research Section */
+        .research-section {
+            padding: 5rem 1rem;
+            background-color: #f9fafb;
+        }
+
+        .research-grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .research-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .research-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .research-card {
+            background-color: #ffffff;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .research-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .research-card img {
+            width: 100%;
+            height: 12rem;
+            object-fit: cover;
+        }
+
+        .research-card .content {
+            padding: 1.5rem;
+        }
+
+        .research-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #1e3a8a;
+            margin-bottom: 0.5rem;
+        }
+
+        .research-card p {
+            color: #4b5563;
+            margin-bottom: 1rem;
+        }
+
+        .research-card a {
+            color: #2563eb;
+            font-weight: 500;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .research-card a:hover {
+            color: #1e40af;
+        }
+
+        .research-section .cta {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .research-section .cta a {
+            background-color: #2563eb;
+            color: #ffffff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+
+        .research-section .cta a:hover {
+            background-color: #1d4ed8;
+        }
+
+        /* Instruments Section */
+        .instruments-section {
+            padding: 5rem 1rem;
+            background-color: #ffffff;
+        }
+
+        .instruments-grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .instruments-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .instruments-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .instrument-card {
+            background-color: #f9fafb;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+
+        .instrument-card:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            transform: translateY(-10px);
+        }
+
+        .instrument-card .icon-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .instrument-card .icon {
+            background-color: #dbeafe;
+            padding: 0.75rem;
+            border-radius: 50%;
+            color: #2563eb;
+            font-size: 1.25rem;
+        }
+
+        .instrument-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #1e3a8a;
+        }
+
+        .instrument-card p {
+            color: #4b5563;
+        }
+
+        /* Team Section */
+        .team-section {
+            padding: 5rem 1rem;
+            background-color: #1e3a8a;
+            color: #ffffff;
+        }
+
+        .team-section .section-title p {
+            color: #bfdbfe;
+        }
+
+        .team-grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        @media (min-width: 640px) {
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .team-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .team-card {
+            background-color: #1e40af;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+        }
+
+        .team-card img {
+            width: 100%;
+            height: 16rem;
+            object-fit: cover;
+        }
+
+        .team-card .content {
+            padding: 1.5rem;
+        }
+
+        .team-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 0.75rem;
+        }
+
+        .team-card .role {
+            color: #93c5fd;
+            margin-bottom: 0.75rem;
+        }
+
+        .team-card p {
+            color: #bfdbfe;
+            margin-bottom: 1rem;
+        }
+
+        .team-card .social-links {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .team-card .social-links a {
+            color: #93c5fd;
+            font-size: 1.25rem;
+            transition: color 0.3s ease;
+        }
+
+        .team-card .social-links a:hover {
+            color: #ffffff;
+        }
+
+        .students-grid {
+            display: grid;
+            gap: 1rem;
+            margin-top: 3rem;
+        }
+
+        @media (min-width: 640px) {
+            .students-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 768px) {
+            .students-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .students-grid {
+                grid-template-columns: repeat(5, 1fr);
+            }
+        }
+
+        .student-card {
+            background-color: #1d4ed8;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            text-align: center;
+        }
+
+        .student-card h3 {
+            font-size: 1.125rem;
+            font-weight: 500;
+            color: #ffffff;
+            margin-bottom: 0.25rem;
+        }
+
+        .student-card .role {
+            color: #bfdbfe;
+            font-size: 0.875rem;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 5rem 1rem;
+            background-color: #f9fafb;
+        }
+
+        .contact-grid {
+            display: grid;
+            gap: 3rem;
+        }
+
+        @media (min-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .contact-info,
+        .contact-form {
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-info h3,
+        .contact-form h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #1e3a8a;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info .info-item .icon {
+            color: #2563eb;
+            margin-top: 0.25rem;
+        }
+
+        .contact-info .info-item h4 {
+            font-weight: 700;
+            color: #1e3a8a;
+        }
+
+        .contact-info .info-item p {
+            color: #4b5563;
+        }
+
+        .contact-form .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .contact-form label {
+            display: block;
+            color: #1f2937;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 0.5rem 1rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.5rem;
+            outline: none;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: #2563eb;
+            box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 8rem;
+        }
+
+        .contact-form button {
+            width: 100%;
+            background-color: #2563eb;
+            color: #ffffff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            border: none;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background-color: #1d4ed8;
+        }
+
+        .lab-hours {
+            background-color: #ffffff;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            margin-top: 2rem;
+        }
+
+        .lab-hours h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #1e3a8a;
+            margin-bottom: 1rem;
+        }
+
+        .lab-hours ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            color: #4b5563;
+        }
+
+        .lab-hours li {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .map-container {
+            margin-top: 3rem;
+            background-color: #ffffff;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 20rem;
+            border: 0;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1e3a8a;
+            color: #ffffff;
+            padding: 3rem 1rem;
+        }
+
+        footer .footer-grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            footer .footer-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        footer .logo-section {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        footer .logo-section .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        footer .logo-section p {
+            color: #bfdbfe;
+        }
+
+        footer h3 {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 1rem;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        footer ul a {
+            color: #bfdbfe;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer ul a:hover {
+            color: #ffffff;
+        }
+
+        footer .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        footer .social-links a {
+            color: #93c5fd;
+            font-size: 1.25rem;
+            transition: color 0.3s ease;
+        }
+
+        footer .social-links a:hover {
+            color: #ffffff;
+        }
+
+        footer .newsletter p {
+            color: #bfdbfe;
+            margin-bottom: 0.5rem;
+        }
+
+        footer .newsletter form {
+            display: flex;
+        }
+
+        footer .newsletter input {
+            flex: 1;
+            padding: 0.5rem 0.75rem;
+            border-radius: 0.5rem 0 0 0.5rem;
+            border: none;
+            outline: none;
+            color: #1f2937;
+        }
+
+        footer .newsletter button {
+            background-color: #2563eb;
+            padding: 0.5rem 1rem;
+            border-radius: 0 0.5rem 0.5rem 0;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        footer .newsletter button:hover {
+            background-color: #1d4ed8;
+        }
+
+        footer .footer-bottom {
+            border-top: 1px solid #1e40af;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            text-align: center;
+            color: #bfdbfe;
+        }
+
+        /* Animations */
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .slide-up {
+            animation: slideUp 1s ease-out;
+        }
+
+        .zoom-in {
+            animation: zoomIn 1s ease-out;
+        }
+
+        .scale-up {
+            animation: scaleUp 0.8s ease-out;
+        }
+
+        .slide-in-left {
+            animation: slideInLeft 0.8s ease-out;
+        }
+
+        .slide-in-right {
+            animation: slideInRight 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes scaleUp {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Animation Classes */
+        .section {
+            opacity: 0;
+        }
+
+        .section.visible {
+            opacity: 1;
+        }
+
+        . {
+            opacity: 0;
+        }
+
+        ..visible {
+            animation: scaleUp 0.8s ease-out forwards;
+        }
+
+        .animate-slide-left {
+            opacity: 0;
+        }
+
+        .animate-slide-left.visible {
+            animation: slideInLeft 0.8s ease-out forwards;
+        }
+
+        .animate-slide-right {
+            opacity: 0;
+        }
+
+        .animate-slide-right.visible {
+            animation: slideInRight 0.8s ease-out forwards;
+        }
+
+        /* Staggered Animation for Cards */
+        .research-card:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .research-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .research-card:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .instrument-card:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .instrument-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .instrument-card:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .instrument-card:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        .instrument-card:nth-child(5) {
+            animation-delay: 0.5s;
+        }
+
+        .instrument-card:nth-child(6) {
+            animation-delay: 0.6s;
+        }
+
+        .team-card:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .team-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .team-card:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .student-card:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .student-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .student-card:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .student-card:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        .student-card:nth-child(5) {
+            animation-delay: 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+    <div class="container">
+        <div class="nav-header">
+            <a href="#" class="logo">
+                <i class="fas fa-flask"></i>
+                Camstri Chemistry Lab
+            </a>
+            <button id="mobile-menu-button" class="mobile-menu-button" aria-label="Toggle mobile menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <div class="nav-menu">
+            <div class="desktop-menu">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#research">Research</a>
+                <a href="#instruments">Instruments</a>
+                <a href="#team">Team</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div id="mobile-menu" class="mobile-menu">
+                <div class="menu-items">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#research">Research</a>
+                    <a href="#instruments">Instruments</a>
+                    <a href="#team">Team</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section fade-in">
+        <div class="container">
+            <h1 class="slide-up">Innovating the Future of Chemistry</h1>
+            <p class="slide-up">At Camstri Chemistry Lab, we push the boundaries of chemical research to solve real-world problems.</p>
+            <div class="buttons slide-up">
+                <a href="#research" class="primary">Our Research</a>
+                <a href="#contact" class="secondary">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section section">
+        <div class="container">
+            <div class="section-title ">
+                <h2>About Our Lab</h2>
+                <div class="divider"></div>
+                <p>The Camstri Chemistry Lab is dedicated to advancing chemical sciences through innovative research and collaboration.</p>
+            </div>
+            
+            <div class="about-grid">
+                <div class="about-card animate-slide-left">
+                    <div class="icon"><i class="fas fa-atom"></i></div>
+                    <h3>Our Vision</h3>
+                    <p>To be a global leader in chemical research that transforms scientific discoveries into solutions for society's most pressing challenges.</p>
+                </div>
+                
+                <div class="about-card animate-slide-right">
+                    <div class="icon"><i class="fas fa-microscope"></i></div>
+                    <h3>Research Areas</h3>
+                    <ul>
+                        <li>• Organic Synthesis</li>
+                        <li>• Analytical Chemistry</li>
+                        <li>• Environmental Chemistry</li>
+                        <li>• Materials Science</li>
+                    </ul>
+                </div>
+                
+                <div class="about-card animate-slide-left">
+                    <div class="icon"><i class="fas fa-handshake"></i></div>
+                    <h3>Collaborations</h3>
+                    <p>We partner with universities, industries, and government agencies to maximize the impact of our research.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Section -->
+    <section id="research" class="research-section section">
+        <div class="container">
+            <div class="section-title ">
+                <h2>Our Research</h2>
+                <div class="divider"></div>
+                <p>Explore our groundbreaking research projects that are shaping the future of chemistry.</p>
+            </div>
+            
+            <div class="research-grid">
+                <div class="research-card animate-slide-left">
+                    <img src="https://images.unsplash.com/photo-1554475901-4538ddfbccc2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1472&q=80" 
+                         srcset="https://images.unsplash.com/photo-1554475901-4538ddfbccc2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60 500w,
+                                 https://images.unsplash.com/photo-1554475901-4538ddfbccc2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1472&q=80 1472w"
+                         sizes="(max-width: 600px) 500px, 1472px"
+                         alt="Sustainable synthesis laboratory setup">
+                    <div class="content">
+                        <h3>Sustainable Synthesis</h3>
+                        <p>Developing eco-friendly synthetic routes for pharmaceutical intermediates.</p>
+                        <a href="/research/sustainable-synthesis">Read More →</a>
+                    </div>
+                </div>
+                
+                <div class="research-card animate-slide-right">
+                    <img src="https://images.unsplash.com/photo-1581094271901-8022df4466f9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1440&q=80" 
+                         srcset="https://images.unsplash.com/photo-1581094271901-8022df4466f9?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60 500w,
+                                 https://images.unsplash.com/photo-1581094271901-8022df4466f9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1440&q=80 1440w"
+                         sizes="(max-width: 600px) 500px, 1440px"
+                         alt="Nanomaterials research equipment">
+                    <div class="content">
+                        <h3>Advanced Materials</h3>
+                        <p>Designing novel nanomaterials for energy storage applications.</p>
+                        <a href="/research/advanced-materials">Read More →</a>
+                    </div>
+                </div>
+                
+                <div class="research-card animate-slide-left">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvL6Q_lQW_sj5rXUEGtF6IRHr2NN-FqNYpqVOGOHlfegThTcVIBFXUrOBo&s=10" 
+                         srcset="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvL6Q_lQW_sj5rXUEGtF6IRHr2NN-FqNYpqVOGOHlfegThTcVIBFXUrOBo&s=10"
+                         sizes="(max-width: 600px) 500px, 1470px"
+                         alt="Environmental monitoring water analysis">
+                    <div class="content">
+                        <h3>Environmental Monitoring</h3>
+                        <p>New analytical methods for detecting pollutants in water systems.</p>
+                        <a href="/research/environmental-monitoring">Read More →</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="cta">
+                <a href="/publications">View All Publications <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instruments Section -->
+    <section id="instruments" class="instruments-section section">
+        <div class="container">
+            <div class="section-title ">
+                <h2>Our Instruments</h2>
+                <div class="divider"></div>
+                <p>State-of-the-art equipment enabling cutting-edge research.</p>
+            </div>
+            
+            <div class="instruments-grid">
+                <div class="instrument-card animate-slide-right">
+                    <div class="icon-wrapper">
+                        <div class="icon"><i class="fas fa-chart-line"></i></div>
+                        <h3>HPLC System</h3>
+                    </div>
+                    <p>High-performance liquid chromatography for precise separation and analysis of complex mixtures.</p>
+                </div>
+                
+                <div class="instrument-card animate-slide-left">
+                    <div class="icon-wrapper">
+                        <div class="icon"><i class="fas fa-fire"></i></div>
+                        <h3>GC-MS</h3>
+                    </div>
+                    <p>Gas chromatography-mass spectrometry for volatile compound identification and quantification.</p>
+                </div>
+                
+                <div class="instrument-card animate-slide-right">
+                    <div class="icon-wrapper">
+                        <div class="icon"><i class="fas fa-atom"></i></div>
+                        <h3>NMR Spectrometer</h3>
+                    </div>
+                    <p>400 MHz nuclear magnetic resonance spectrometer for molecular structure determination.</p>
+                </div>
+                
+                <div class="instrument-card animate-slide-left">
+                    <div class="icon-wrapper">
+                        <div class="icon"><i class="fas fa-lightbulb"></i></div>
+                        <h3>UV-Vis Spectrophotometer</h3>
+                    </div>
+                    <p>Ultraviolet-visible spectroscopy for absorption measurements across a wide wavelength range.</p>
+                </div>
+                
+                <div class="instrument-card animate-slide-right">
+                    <div class="icon-wrapper">
+                        <div class="icon"><i class="fas fa-temperature-high"></i></div>
+                        <h3>DSC</h3>
+                    </div>
+                    <p>Differential scanning calorimeter for thermal analysis of materials.</p>
+                </div>
+                
+                <div class="instrument-card animate-slide-left">
+                    <div class="icon-wrapper">
+                        <div class="icon"><i class="fas fa-vial"></i></div>
+                        <h3>FTIR Spectrometer</h3>
+                    </div>
+                    <p>Fourier-transform infrared spectroscopy for functional group analysis.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="team-section section">
+        <div class="container">
+            <div class="section-title ">
+                <h2 style="color: #fff;">Our Team</h2>
+                <div class="divider"></div>
+                <p>Meet the brilliant minds driving our research forward.</p>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-card animate-slide-left">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1376&q=80" 
+                         srcset="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60 500w,
+                                 https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1376&q=80 1376w"
+                         sizes="(max-width: 600px) 500px, 1376px"
+                         alt="Dr. Sarah Johnson, Principal Investigator at Camstri Chemistry Lab">
+                    <div class="content">
+                        <h3>Dr. Sarah Johnson</h3>
+                        <p class="role">Principal Investigator</p>
+                        <p>Expert in organic synthesis with 15+ years of research experience.</p>
+                        <div class="social-links">
+                            <a href="https://linkedin.com" aria-label="LinkedIn profile of Dr. Sarah Johnson"><i class="fab fa-linkedin"></i></a>
+                            <a href="mailto:sjohnson@camstrichemlab.edu" aria-label="Email Dr. Sarah Johnson"><i class="fas fa-envelope"></i></a>
+                            <a href="/cv/sarah-johnson.pdf" aria-label="Download Dr. Sarah Johnson's CV"><i class="fas fa-file-pdf"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-card animate-slide-right">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1374&q=80" 
+                         srcset="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60 500w,
+                                 https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1374&q=80 1374w"
+                         sizes="(max-width: 600px) 500px, 1374px"
+                         alt="Dr. Michael Chen, Senior Researcher at Camstri Chemistry Lab">
+                    <div class="content">
+                        <h3>Dr. Michael Chen</h3>
+                        <p class="role">Senior Researcher</p>
+                        <p>Specializes in analytical chemistry and method development.</p>
+                        <div class="social-links">
+                            <a href="https://linkedin.com" aria-label="LinkedIn profile of Dr. Michael Chen"><i class="fab fa-linkedin"></i></a>
+                            <a href="mailto:mchen@camstrichemlab.edu" aria-label="Email Dr. Michael Chen"><i class="fas fa-envelope"></i></a>
+                            <a href="/cv/michael-chen.pdf" aria-label="Download Dr. Michael Chen's CV"><i class="fas fa-file-pdf"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-card animate-slide-left">
+                    <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1374&q=80" 
+                         srcset="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60 500w,
+                                 https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1374&q=80 1374w"
+                         sizes="(max-width: 600px) 500px, 1374px"
+                         alt="Dr. Emily Rodriguez, Postdoctoral Fellow at Camstri Chemistry Lab">
+                    <div class="content">
+                        <h3>Dr. Emily Rodriguez</h3>
+                        <p class="role">Postdoctoral Fellow</p>
+                        <p>Focuses on environmental chemistry and pollution remediation.</p>
+                        <div class="social-links">
+                            <a href="https://linkedin.com" aria-label="LinkedIn profile of Dr. Emily Rodriguez"><i class="fab fa-linkedin"></i></a>
+                            <a href="mailto:erodriguez@camstrichemlab.edu" aria-label="Email Dr. Emily Rodriguez"><i class="fas fa-envelope"></i></a>
+                            <a href="/cv/emily-rodriguez.pdf" aria-label="Download Dr. Emily Rodriguez's CV"><i class="fas fa-file-pdf"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="students-grid">
+                <h3>Graduate Students</h3>
+                <div class="students-grid">
+                    <div class="student-card animate-slide-right">
+                        <h3>Alex Turner</h3>
+                        <p class="role">PhD Candidate</p>
+                    </div>
+                    <div class="student-card animate-slide-left">
+                        <h3>Priya Patel</h3>
+                        <p class="role">PhD Candidate</p>
+                    </div>
+                    <div class="student-card animate-slide-right">
+                        <h3>James Wilson</h3>
+                        <p class="role">MSc Student</p>
+                    </div>
+                    <div class="student-card animate-slide-left">
+                        <h3>Sophia Kim</h3>
+                        <p class="role">MSc Student</p>
+                    </div>
+                    <div class="student-card animate-slide-right">
+                        <h3>David Zhang</h3>
+                        <p class="role">MSc Student</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section section">
+        <div class="container">
+            <div class="section-title ">
+                <h2>Contact Us</h2>
+                <div class="divider"></div>
+                <p>We'd love to hear from you. Reach out for collaborations, inquiries, or to learn more about our work.</p>
+            </div>
+            
+            <div class="contact-grid">
+                <div>
+                    <div class="contact-info animate-slide-left">
+                        <h3>Get In Touch</h3>
+                        <div class="info-item">
+                            <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div>
+                                <h4>Address</h4>
+                                <p>Department of Chemistry<br>University Science Building<br>123 Research Drive<br>City, State 12345</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="icon"><i class="fas fa-envelope"></i></div>
+                            <div>
+                                <h4>Email</h4>
+                                <p>info@camstrichemlab.edu<br>research@camstrichemlab.edu</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="icon"><i class="fas fa-phone"></i></div>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>+1 (555) 123-4567<br>Lab: +1 (555) 987-6543</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="lab-hours">
+                        <h3>Lab Hours</h3>
+                        <ul>
+                            <li><span>Monday - Friday</span><span>8:00 AM - 6:00 PM</span></li>
+                            <li><span>Saturday</span><span>10:00 AM - 4:00 PM</span></li>
+                            <li><span>Sunday</span><span>Closed</span></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="contact-form animate-slide-right">
+                    <h3>Send Us a Message</h3>
+                    <form id="contact-form" action="/submit-contact" method="POST">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit">Send Message <i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="map-container ">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.215256018511!2d-73.98784492423938!3d40.74844097138961!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1689784290551!5m2!1sen!2sus" 
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Camstri Chemistry Lab Location"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="logo-section">
+                    <div class="logo">
+                        <i class="fas fa-flask text-2xl" style="color: #93c5fd;"></i>
+                        <span>Camstri Chemistry Lab</span>
+                    </div>
+                    <p>Advancing chemical sciences through innovative research and collaboration.</p>
+                </div>
+                
+                <div>
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#research">Research</a></li>
+                        <li><a href="#team">Team</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="/publications">Publications</a></li>
+                        <li><a href="/lab-safety">Lab Safety</a></li>
+                        <li><a href="/protocols">Protocols</a></li>
+                        <li><a href="/news">News</a></li>
+                    </ul>
+                </div>
+                
+                <div class="newsletter">
+                    <h3>Connect With Us</h3>
+                    <div class="social-links">
+                        <a href="https://twitter.com" aria-label="Follow us on Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://linkedin.com" aria-label="Connect on LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://researchgate.net" aria-label="Follow on ResearchGate"><i class="fab fa-researchgate"></i></a>
+                        <a href="https://github.com" aria-label="View our GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                    <p>Subscribe to our newsletter</p>
+                    <form id="newsletter-form" action="/subscribe" method="POST">
+                        <input type="email" name="email" placeholder="Your email" required>
+                        <button type="submit" aria-label="Subscribe to newsletter"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© <span id="current-year"></span> Camstri Chemistry Lab. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Set dynamic copyright year
+        const currentYearElement = document.getElementById('current-year');
+        if (currentYearElement) {
+            currentYearElement.textContent = new Date().getFullYear();
+        }
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('open');
+                mobileMenuButton.setAttribute('aria-expanded', mobileMenu.classList.contains('open'));
+            });
+        }
+
+        // Scroll animations
+        const sections = document.querySelectorAll('.section');
+        const cards = document.querySelectorAll('.about-card, .research-card, .instrument-card, .team-card, .student-card, .contact-info, .contact-form, .map-container');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        cards.forEach(card => {
+            observer.observe(card);
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                if (mobileMenu && mobileMenu.classList.contains('open')) {
+                    mobileMenu.classList.remove('open');
+                    if (mobileMenuButton) {
+                        mobileMenuButton.setAttribute('aria-expanded', 'false');
+                    }
+                }
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Basic form validation for contact form
+        const contactForm = document.getElementById('contact-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Form submission is not yet implemented. Please configure a backend service.');
+                // Add actual form submission logic here (e.g., fetch to a server)
+            });
+        }
+
+        // Basic form validation for newsletter form
+        const newsletterForm = document.getElementById('newsletter-form');
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Newsletter subscription is not yet implemented. Please configure a backend service.');
+                // Add actual subscription logic here
+            });
+        }
+    </script>
+</body>
+</html>

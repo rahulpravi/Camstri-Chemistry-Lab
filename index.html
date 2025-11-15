@@ -11,116 +11,128 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80">
     <meta property="og:url" content="https://www.camstrichemlab.edu">
     <title>The Materials Chemistry Research Lab| Chennai</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Font Awesome (Icon Library) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" xintegrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="font-sans bg-gray-100 text-gray-800">
+
     <!-- Navigation -->
-    <nav>
-    <div class="container">
-        <div class="nav-header">
-            <a href="#" class="logo">
-               <img src="img/logo w.svg" alt="logo">
-            </a>
-            <button id="mobile-menu-button" class="mobile-menu-button" aria-label="Toggle mobile menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-        <div class="nav-menu">
-            <div class="desktop-menu">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#research">Research</a>
-                <a href="#instruments">Instruments</a>
-                <a href="#team">Team</a>
-                <a href="#opportunities">Opportunities</a>
-                <a href="#contact">Contact</a>
-            </div>
-            <div id="mobile-menu" class="mobile-menu">
-  <div class="menu-items">
-    <a href="#home"><i class="fas fa-home"></i> Home</a>
-    <a href="#about"><i class="fas fa-info-circle"></i> About</a>
-    <a href="#research"><i class="fas fa-flask"></i> Research</a>
-    <a href="#instruments"><i class="fas fa-microscope"></i> Instruments</a>
-    <a href="#team"><i class="fas fa-users"></i> Team</a>
-     <a href="#opportunities"><i class="fas fa-briefcase"></i> Opportunities</a>
-    <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+    <nav class="bg-[#c2185b] shadow-lg sticky top-0 z-50 transition-all duration-300 ease-in-out">
+        <div class="container mx-auto max-w-7xl px-4 lg:px-8">
+            <div class="flex justify-between items-center py-3">
+                <!-- Logo -->
+                <a href="#" class="logo flex items-center gap-2 text-white text-xl font-light">
+                   <img src="img/logo w.svg" alt="logo" class="h-10 max-h-12" 
+                        onerror="this.onerror=null; this.src='https://placehold.co/150x50/c2185b/FFFFFF?text=MCRL+Logo';">
+                </a>
                 
-                 
-                    <div class="footer-social">
-  <a href="https://www.facebook.com/AmritaUniversity" target="_blank">
-    <i class="fab fa-facebook"></i>
-  </a>
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-2">
+                    <a href="#home" class="text-white font-medium px-4 py-2 rounded-md transition-all duration-300 hover:bg-white/10 hover:translate-y-[-2px] focus:outline-none focus:ring-2 focus:ring-white/50">Home</a>
+                    <a href="#about" class="text-white font-medium px-4 py-2 rounded-md transition-all duration-300 hover:bg-white/10 hover:translate-y-[-2px] focus:outline-none focus:ring-2 focus:ring-white/50">About</a>
+                    <a href="#research" class="text-white font-medium px-4 py-2 rounded-md transition-all duration-300 hover:bg-white/10 hover:translate-y-[-2px] focus:outline-none focus:ring-2 focus:ring-white/50">Research</a>
+                    <a href="#instruments" class="text-white font-medium px-4 py-2 rounded-md transition-all duration-300 hover:bg-white/10 hover:translate-y-[-2px] focus:outline-none focus:ring-2 focus:ring-white/50">Instruments</a>
+                    <a href="#team" class="text-white font-medium px-4 py-2 rounded-md transition-all duration-300 hover:bg-white/10 hover:translate-y-[-2px] focus:outline-none focus:ring-2 focus:ring-white/50">Team</a>
+                    <a href="#opportunities" class="text-white font-medium px-4 py-2 rounded-md transition-all duration-300 hover:bg-white/10 hover:translate-y-[-2px] focus:outline-none focus:ring-2 focus:ring-white/50">Opportunities</a>
+                    <a href="#contact" class="text-white font-medium px-4 py-2 rounded-md transition-all duration-300 hover:bg-white/10 hover:translate-y-[-2px] focus:outline-none focus:ring-2 focus:ring-white/50">Contact</a>
+                </div>
 
-  <a href="https://twitter.com/AMRITAedu" target="_blank">
-    <i class="fab fa-twitter"></i>
-  </a>
-
-  <a href="https://www.youtube.com/user/AmritaUniversity" target="_blank">
-    <i class="fab fa-youtube"></i>
-  </a>
-
-  <a href="https://www.linkedin.com/school/amrita-vishwa-vidyapeetham-official/" target="_blank">
-    <i class="fab fa-linkedin"></i>
-  </a>
-</div>    
-  </div>
-</div>
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden flex flex-col gap-[5px] p-2 rounded-md hover:bg-white/15 transition-all duration-300" aria-label="Toggle mobile menu">
+                    <span class="w-6 h-0.5 bg-white transition-all duration-300 ease-in-out"></span>
+                    <span class="w-6 h-0.5 bg-white transition-all duration-300 ease-in-out"></span>
+                    <span class="w-6 h-0.5 bg-white transition-all duration-300 ease-in-out"></span>
+                </button>
+            </div>
         </div>
-    </div>
-</nav>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-[#c2185b] transition-all duration-400 ease-out max-h-0 overflow-hidden">
+            <div class="flex flex-col gap-2 p-4">
+                <a href="#home" class="flex items-center gap-3 text-white font-medium px-4 py-3 rounded-md transition-all duration-300 hover:bg-white/20"><i class="fas fa-home w-5 text-center"></i> Home</a>
+                <a href="#about" class="flex items-center gap-3 text-white font-medium px-4 py-3 rounded-md transition-all duration-300 hover:bg-white/20"><i class="fas fa-info-circle w-5 text-center"></i> About</a>
+                <a href="#research" class="flex items-center gap-3 text-white font-medium px-4 py-3 rounded-md transition-all duration-300 hover:bg-white/20"><i class="fas fa-flask w-5 text-center"></i> Research</a>
+                <a href="#instruments" class="flex items-center gap-3 text-white font-medium px-4 py-3 rounded-md transition-all duration-300 hover:bg-white/20"><i class="fas fa-microscope w-5 text-center"></i> Instruments</a>
+                <a href="#team" class="flex items-center gap-3 text-white font-medium px-4 py-3 rounded-md transition-all duration-300 hover:bg-white/20"><i class="fas fa-users w-5 text-center"></i> Team</a>
+                <a href="#opportunities" class="flex items-center gap-3 text-white font-medium px-4 py-3 rounded-md transition-all duration-300 hover:bg-white/20"><i class="fas fa-briefcase w-5 text-center"></i> Opportunities</a>
+                <a href="#contact" class="flex items-center gap-3 text-white font-medium px-4 py-3 rounded-md transition-all duration-300 hover:bg-white/20"><i class="fas fa-envelope w-5 text-center"></i> Contact</a>
+                
+                <!-- Social Links in Mobile Menu -->
+                <div class="flex justify-center gap-6 pt-4 border-t border-white/20">
+                    <a href="https://www.facebook.com/AmritaUniversity" target="_blank" class="text-white text-2xl hover:text-yellow-300 transition-colors"><i class="fab fa-facebook"></i></a>
+                    <a href="https://twitter.com/AMRITAedu" target="_blank" class="text-white text-2xl hover:text-yellow-300 transition-colors"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.youtube.com/user/AmritaUniversity" target="_blank" class="text-white text-2xl hover:text-yellow-300 transition-colors"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.linkedin.com/school/amrita-vishwa-vidyapeetham-official/" target="_blank" class="text-white text-2xl hover:text-yellow-300 transition-colors"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero-section fade-in">
-        <div class="container">
-          <!-- Lab name added here -->
-    <h1 class="lab-name">Materials Chemistry Research Lab 
-    (MCRL)</h1>
-            <h2 class="slide-up">Innovating the Future of Chemistry</h2>
-            <p class="slide-up">At Materials Chemistry Research Lab, we push the boundaries of chemical research to solve real-world problems.</p>
-            <div class="buttons slide-up">
-                <a href="#research" class="primary">Our Research</a>
-                <a href="#contact" class="secondary">Contact Us</a>
+    <section id="home" class="hero-section fade-in bg-cover bg-center bg-fixed text-white" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80');">
+        <div class="container mx-auto max-w-7xl px-4 py-24 md:py-40 text-center">
+            <h1 class="lab-name text-3xl md:text-4xl font-extrabold uppercase tracking-wide mb-2 slide-up text-white">Materials Chemistry Research Lab (MCRL)</h1>
+            <h3 class="text-4xl md:text-6xl font-semibold text-white mb-6 slide-up">Innovating the Future of Chemistry</h3>
+            <p class="text-lg md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto slide-up">At Materials Chemistry Research Lab, we push the boundaries of chemical research to solve real-world problems.</p>
+            <div class="buttons flex flex-col sm:flex-row gap-4 justify-center slide-up">
+                <a href="#research" class="primary bg-[#d92842] text-white px-8 py-3 rounded-lg font-medium text-lg transition-all duration-300 hover:bg-[#c2185b] hover:shadow-lg transform hover:-translate-y-1">Our Research</a>
+                <a href="#contact" class="secondary bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-medium text-lg transition-all duration-300 hover:bg-[#d92842] hover:border-[#d92842] hover:shadow-lg transform hover:-translate-y-1">Contact Us</a>
             </div>
         </div>
     </section>
+    
+    <!-- Section Title Component (reusable template, not displayed) -->
+    <div id="section-title-template" class="hidden">
+        <div class="section-title text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-[#d92842] mb-4"></h2>
+            <div class="divider w-20 h-1 bg-[#fdd835] mx-auto mb-6"></div>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto"></p>
+        </div>
+    </div>
 
     <!-- About Section -->
-    <section id="about" class="about-section section">
-        <div class="container">
-            <div class="section-title ">
-                <h2>About Our Lab</h2>
-                <div class="divider"></div>
-                <p>The Materials Chemistry Research Lab (MCRL) at Amrita Vishwa Vidyapeetham, Chennai Campus, was established on 23 July 2024 as a dedicated hub for cutting-edge research in advanced materials and sustainable technologies. The lab’s core focus spans energy storage, electrochemistry, carbon capture and conversion, wastewater purification, and precious material purification, driven by innovative approaches in the synthesis and modification of polymers and nanomaterials. MCRL aims to integrate fundamental chemistry with practical engineering solutions, developing novel materials and processes that address critical challenges in clean energy, environmental remediation, and resource recovery, thereby contributing to both scientific advancement and societal benefit.</p>
+    <section id="about" class="about-section section py-16 md:py-24 bg-gray-100">
+        <div class="container mx-auto max-w-7xl px-4">
+            <div class="section-title text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-[#d92842] mb-4">About Our Lab</h2>
+                <div class="divider w-20 h-1 bg-[#fdd835] mx-auto mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">The Materials Chemistry Research Lab (MCRL) at Amrita Vishwa Vidyapeetham, Chennai Campus, was established on 23 July 2024 as a dedicated hub for cutting-edge research in advanced materials and sustainable technologies. The lab’s core focus spans energy storage, electrochemistry, carbon capture and conversion, wastewater purification, and precious material purification, driven by innovative approaches in the synthesis and modification of polymers and nanomaterials. MCRL aims to integrate fundamental chemistry with practical engineering solutions, developing novel materials and processes that address critical challenges in clean energy, environmental remediation, and resource recovery, thereby contributing to both scientific advancement and societal benefit.</p>
             </div>
             
-            <div class="about-grid">
-                <div class="about-card animate-slide-left">
-                    <div class="icon"><i class="fas fa-atom"></i></div>
-                    <h3>Our Vision</h3>
-                    <p>To be a global leader in chemical research that transforms scientific discoveries into solutions for society's most pressing challenges.</p>
+            <div class="about-grid grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="about-card bg-[#f7c8c8] p-8 rounded-lg shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-2 animate-slide-left">
+                    <div class="icon text-5xl text-[#d92842] mb-4"><i class="fas fa-atom"></i></div>
+                    <h3 class="text-2xl font-bold text-[#d92842] mb-3">Our Vision</h3>
+                    <p class="text-gray-700">To be a global leader in chemical research that transforms scientific discoveries into solutions for society's most pressing challenges.</p>
                 </div>
                 
-                <div class="about-card animate-slide-right">
-                    <div class="icon"><i class="fas fa-microscope"></i></div>
-                    <h3>Research Areas</h3>
-                    <ul>
+                <!-- Card 2 -->
+                <div class="about-card bg-[#f7c8c8] p-8 rounded-lg shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-2 animate-slide-right">
+                    <div class="icon text-5xl text-[#d92842] mb-4"><i class="fas fa-microscope"></i></div>
+                    <h3 class="text-2xl font-bold text-[#d92842] mb-3">Research Areas</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1">
                         <li>Energy Storage</li>
                         <li>Carbon capture and Conversion</li>
                         <li>Water purification </li>
                         <li>Porous material synthesis</li>
                         <li>Polymer and nanoparticles synthesis</li>
                         <li>Precious metal recovery</li>
-                        
                     </ul>
                 </div>
                 
-                <div class="about-card animate-slide-left">
-                    <div class="icon"><i class="fas fa-handshake"></i></div>
-                    <h3>Collaborations</h3>
-                    <ol>
+                <!-- Card 3 -->
+                <div class="about-card bg-[#f7c8c8] p-8 rounded-lg shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-2 animate-slide-right">
+                    <div class="icon text-5xl text-[#d92842] mb-4"><i class="fas fa-handshake"></i></div>
+                    <h3 class="text-2xl font-bold text-[#d92842] mb-3">Collaborations</h3>
+                    <ol class="list-decimal list-inside text-gray-700 space-y-1">
                       <li>Indian Space Research Organisation (ISRO)</li>
                       <li>Aeronautic Research and Development Board (AR&DB)</li>
                       <li>Aquasilo Systems</li>
@@ -133,409 +145,470 @@
     </section>
 
     <!-- Research Section -->
-    <section id="research" class="research-section section">
-  <div class="container">
-    <div class="section-title">
-      <h2>Our Research Gallery</h2>
-      <div class="divider"></div>
-      <p>Explore snapshots of our cutting-edge research projects.</p>
-    </div>
-
-    <div class="gallery-grid">
-      <!-- Gallery Item -->
-      <div class="gallery-grid">
-  <!-- Card 1 -->
-  <div class="gallery-card research-card animate-slide-left">
-    <img src="https://images.unsplash.com/photo-1581094271901-8022df4466f9?auto=format&fit=crop&w=800&q=80" 
-         alt="Energy Storage" onclick="openLightbox(this)">
-    <p><strong>Energy Storage</strong></p>
-  </div>
-
-  <!-- Card 2 -->
-  <div class="gallery-card research-card animate-slide-right">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQppy5ZOD6ApZHVQLJv3AaD6J7rx0joGlFbQ2OmBc14pJ3DHjbSo9wqK4E&s=10" 
-         alt="Carbon Capture and Conversion" onclick="openLightbox(this)">
-    <p><strong>Carbon Capture & Conversion</strong></p>
-  </div>
-
-  <!-- Card 3 -->
-  <div class="gallery-card research-card animate-slide-left">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvL6Q_lQW_sj5rXUEGtF6IRHr2NN-FqNYpqVOGOHlfegThTcVIBFXUrOBo&s=10" 
-         alt="Water Purification" onclick="openLightbox(this)">
-    <p><strong>Water Purification</strong></p>
-  </div>
-
-  <!-- Card 4 -->
-  <div class="gallery-card research-card animate-slide-right">
-    <img src="https://images.unsplash.com/photo-1554475901-4538ddfbccc2?auto=format&fit=crop&w=800&q=80" 
-         alt="Porous Material Synthesis" onclick="openLightbox(this)">
-    <p><strong>Porous Material Synthesis</strong></p>
-  </div>
-
-  <!-- Card 5 -->
-  <div class="gallery-card research-card animate-slide-left">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmrWlUfQrJ-wuj8Bq6Zk33fC3zECv1ESRQAo-bXOuFEIYk1x4J0GacKZLN&s=10" 
-         alt="Polymer and Nanoparticles Synthesis" onclick="openLightbox(this)">
-    <p><strong>Polymer & Nanoparticles</strong></p>
-  </div>
-
-  <!-- Card 6 -->
-  <div class="gallery-card research-card animate-slide-right">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQS86usml-Rri4Y_4Z4PU61N-a6L_ds4McRUYUk7vr-xO7UErm1y2c8XsgF&s=10" 
-         alt="Precious Metal Recovery" onclick="openLightbox(this)">
-    <p><strong>Precious Metal Recovery</strong></p>
-  </div>
-</div>
-</div>
-<div class="cta">
-                <a href="">View All Publications <i class="fas fa-arrow-right"></i></a>
+    <section id="research" class="research-section section py-16 md:py-24 bg-white">
+        <div class="container mx-auto max-w-7xl px-4">
+            <div class="section-title text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-[#d92842] mb-4">Our Research Gallery</h2>
+                <div class="divider w-20 h-1 bg-[#fdd835] mx-auto mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Explore snapshots of our cutting-edge research projects.</p>
             </div>
-    </div>
-  </div>
 
-  <!-- Lightbox Popup -->
-  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-    <span class="close">&times;</span>
-    <img id="lightbox-img" src="" alt="">
-    <p id="lightbox-caption"></p>
-  </div>
-</section>
-    <!-- Instruments Section -->
-    <section id="instruments" class="instruments-section section">
-        <div class="container">
-            <div class="section-title ">
-                <h2>Our Instruments</h2>
-                <div class="divider"></div>
-                <p>State-of-the-art equipment enabling cutting-edge research.</p>
+            <div class="gallery-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="gallery-card research-card animate-slide-left bg-white rounded-lg shadow-md overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-xl hover:scale-105">
+                    <img src="https://images.unsplash.com/photo-1581094271901-8022df4466f9?auto=format&fit=crop&w=800&q=80" 
+                         alt="Energy Storage" onclick="openLightbox(this)" class="w-full h-56 object-cover">
+                    <p class="p-4 text-center font-semibold text-lg text-gray-800"><strong>Energy Storage</strong></p>
+                </div>
+                <!-- Card 2 -->
+                <div class="gallery-card research-card animate-slide-right bg-white rounded-lg shadow-md overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-xl hover:scale-105">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQppy5ZOD6ApZHVQLJv3AaD6J7rx0joGlFbQ2OmBc14pJ3DHjbSo9wqK4E&s=10" 
+                        alt="Carbon Capture and Conversion" onclick="openLightbox(this)">
+                    <p class="p-4 text-center font-semibold text-lg text-gray-800"><strong>Carbon Capture & Conversion</strong></p>
+                </div>
+                <!-- Card 3 -->
+                <div class="gallery-card research-card animate-slide-left bg-white rounded-lg shadow-md overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-xl hover:scale-105">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvL6Q_lQW_sj5rXUEGtF6IRHr2NN-FqNYpqVOGOHlfegThTcVIBFXUrOBo&s=10" 
+                        alt="Water Purification" onclick="openLightbox(this)">
+                    <p class="p-4 text-center font-semibold text-lg text-gray-800"><strong>Water Purification</strong></p>
+                </div>
+                <!-- Card 4 -->
+                <div class="gallery-card research-card animate-slide-right bg-white rounded-lg shadow-md overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-xl hover:scale-105">
+                    <img src="https://images.unsplash.com/photo-1554475901-4538ddfbccc2?auto=format&fit=crop&w=800&q=80" 
+                         alt="Porous Material Synthesis" onclick="openLightbox(this)" class="w-full h-56 object-cover">
+                    <p class="p-4 text-center font-semibold text-lg text-gray-800"><strong>Porous Material Synthesis</strong></p>
+                </div>
+                <!-- Card 5 -->
+                <div class="gallery-card research-card animate-slide-left bg-white rounded-lg shadow-md overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-xl hover:scale-105">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmrWlUfQrJ-wuj8Bq6Zk33fC3zECv1ESRQAo-bXOuFEIYk1x4J0GacKZLN&s=10" 
+                        alt="Polymer and Nanoparticles Synthesis" onclick="openLightbox(this)">
+                    <p class="p-4 text-center font-semibold text-lg text-gray-800"><strong>Polymer & Nanoparticles</strong></p>
+                </div>
+                <!-- Card 6 -->
+                <div class="gallery-card research-card animate-slide-right bg-white rounded-lg shadow-md overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-xl hover:scale-105">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQS86usml-Rri4Y_4Z4PU61N-a6L_ds4McRUYUk7vr-xO7UErm1y2c8XsgF&s=10" 
+                        alt="Precious Metal Recovery" onclick="openLightbox(this)">
+                    <p class="p-4 text-center font-semibold text-lg text-gray-800"><strong>Precious Metal Recovery</strong></p>
+                </div>
             </div>
             
-            <div class="instruments-grid">
-                <div class="instrument-card animate-slide-right">
-                    <div class="icon-wrapper">
-                        <div class="icon"><i class="fas fa-chart-line"></i></div>
-                        <h3>Electrochemical Workstation</h3>
+            <div class="cta text-center mt-16">
+                <a href="#" class="bg-[#d92842] text-white px-8 py-3 rounded-lg font-medium text-lg transition-all duration-300 hover:bg-[#c2185b] hover:shadow-lg transform hover:-translate-y-1">
+                    View All Publications <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Popup -->
+    <div id="lightbox" class="lightbox hidden fixed z-[1000] left-0 top-0 w-full h-full bg-black/90 justify-center items-center flex-col p-4">
+        <span class="close absolute top-5 right-8 text-4xl text-white cursor-pointer hover:text-gray-300">&times;</span>
+        <img id="lightbox-img" src="" alt="" class="max-w-[90%] max-h-[70%] rounded-lg shadow-2xl">
+        <p id="lightbox-caption" class="mt-4 text-white text-xl"></p>
+    </div>
+
+    <!-- Instruments Section -->
+    <section id="instruments" class="instruments-section section py-16 md:py-24 bg-gray-100">
+        <div class="container mx-auto max-w-7xl px-4">
+            <div class="section-title text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-[#d92842] mb-4">Our Instruments</h2>
+                <div class="divider w-20 h-1 bg-[#fdd835] mx-auto mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">State-of-the-art equipment enabling cutting-edge research.</p>
+            </div>
+            
+            <div class="instruments-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Instrument 1 -->
+                <div class="instrument-card animate-slide-right bg-white p-8 rounded-lg shadow-md border border-gray-200 transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+                    <div class="icon-wrapper flex items-center gap-4 mb-4">
+                        <div class="icon bg-blue-100 text-3xl text-[#d92842] p-4 rounded-full">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-[#d92842]">Electrochemical Workstation</h3>
                     </div>
-                    <p>Used for analyzing electrochemical properties of materials, supporting energy storage and conversion studies.</p>
+                    <p class="text-gray-600">Used for analyzing electrochemical properties of materials, supporting energy storage and conversion studies.</p>
                 </div>
-                
-                <div class="instrument-card animate-slide-left">
-                    <div class="icon-wrapper">
-                        <div class="icon"><i class="fas fa-box-open"></i></div>
-                        <h3>Glove Box</h3>
+                <!-- Instrument 2 -->
+                <div class="instrument-card animate-slide-left bg-white p-8 rounded-lg shadow-md border border-gray-200 transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+                    <div class="icon-wrapper flex items-center gap-4 mb-4">
+                        <div class="icon bg-blue-100 text-3xl text-[#d92842] p-4 rounded-full">
+                            <i class="fas fa-box-open"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-[#d92842]">Glove Box</h3>
                     </div>
-                    <p>An inert atmosphere enclosure that allows safe handling of air- and moisture-sensitive materials.</p>
+                    <p class="text-gray-600">An inert atmosphere enclosure that allows safe handling of air- and moisture-sensitive materials.</p>
                 </div>
-                
-                <div class="instrument-card animate-slide-right">
-                    <div class="icon-wrapper">
-                        <div class="icon"><i class="fas fa-tools"></i></div>
-                        <h3>Cell Fabrication Accessories</h3>
+                <!-- Instrument 3 -->
+                <div class="instrument-card animate-slide-right bg-white p-8 rounded-lg shadow-md border border-gray-200 transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+                    <div class="icon-wrapper flex items-center gap-4 mb-4">
+                        <div class="icon bg-blue-100 text-3xl text-[#d92842] p-4 rounded-full">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-[#d92842]">Cell Fabrication Accessories</h3>
                     </div>
-                    <p>Specialized equipment for assembling and testing prototype electrochemical cells and devices.</p>
+                    <p class="text-gray-600">Specialized equipment for assembling and testing prototype electrochemical cells and devices.</p>
                 </div>
-                
-                <div class="instrument-card animate-slide-left">
-                    <div class="icon-wrapper">
-                        <div class="icon"><i class="fas fa-fire"></i></div>
-                        <h3>Tubular & Box Furnace</h3>
+                <!-- Instrument 4 -->
+                <div class="instrument-card animate-slide-left bg-white p-8 rounded-lg shadow-md border border-gray-200 transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+                    <div class="icon-wrapper flex items-center gap-4 mb-4">
+                        <div class="icon bg-blue-100 text-3xl text-[#d92842] p-4 rounded-full">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-[#d92842]">Tubular & Box Furnace</h3>
                     </div>
-                    <p>High-temperature furnaces designed for heat treatment, synthesis, and material modification processes.</p>
+                    <p class="text-gray-600">High-temperature furnaces designed for heat treatment, synthesis, and material modification processes.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Team Section -->
-    <section id="team" class="team-section section">
-        <div class="container">
-            <div class="section-title ">
-                <h2 style="color: #fff;">Our Team</h2>
-                <div class="divider"></div>
-                <p>Meet the brilliant minds driving our research forward.</p>
-            </div>
-
-<!-- Modal for Dr. Sarathchandran -->
-<div id="sarathModal" class="modal">
-  <div class="modal-content">
-    <!-- Close Button -->
-    <span class="close">&times;</span>
-
-    <!-- Tab Buttons -->
-    <div class="tabs">
-      <button class="tab-link active" data-tab="papers">Research Papers</button>
-      <button class="tab-link" data-tab="books">Books & Chapters</button>
-      <button class="tab-link" data-tab="patents">Patents</button>
-    </div>
-
-    <!-- Research Papers -->
-    <div class="tab-content active" id="papers">
-      <ul>
-        <li>Block co-polymer of Epoxy resin and Poly(trimethylene terephthalate) – Sarathchandran C, et al. (2013)</li>
-        <li>Non-isothermal crystallization kinetics of Poly(Lactic acid)- Hemp fibre nanocomposite – Sarathchandran C, et al. (2013)</li>
-        <li>Stereochemistry and Miscibility of Epoxy Resin-Poly blends – Sarathchandran C, et al. (2014)</li>
-        <li><a href="sarathchandran.html" target="_blank">Click more...</a></li>
-      </ul>
-    </div>
-
-    <!-- Books & Chapters -->
-    <div class="tab-content" id="books">
-      <ul>
-        <li>Poly(trimethylene terephthalate) – The next generation engineering thermoplastic – Sarathchandran C, et al.</li>
-        <li>Polymer Blends – Sarathchandran C, et al.</li>
-        <li>Rheology: An Introduction – Sarathchandran C, et al. (2019)</li>
-        <li><a href="sarathchandran.html" target="_blank">Click more...</a></li>
-      </ul>
-    </div>
-
-    <!-- Patents -->
-    <div class="tab-content" id="patents">
-      <ul>
-        <li>Process of Preparing Silica Aerogel Felt Composites – 202241019700 (2022)</li>
-        <li>Eco-friendly route for synthesis of carbon aerogels – 202341062434 (2023)</li>
-        <li><a href="sarathchandran.html" target="_blank">Click more...</a></li>
-      </ul>
-    </div>
-
-  </div>
-</div>
-        
-            <div class="team-grid">
-                <div class="team-card animate-slide-left">
-                    <img src="img/SC.jpg"
-                         alt="Dr. Sarathchandran C">
-                    <div class="content">
-                        <h3>Dr. Sarathchandran C</h3>
-                        <p class="role">Centre Head - MCRL</p>
-                        <p>Polymers, Aerogels, Li-ion batteries, Hydrogen storage devices, Electrospinning, Carbon capture and conversion.</p>
-                        <div class="social-links">
-                            <a href="https://www.linkedin.com/in/sarathchandran-c-7b581856" aria-label="LinkedIn profile of Dr. Sarathchandran C"><i class="fab fa-linkedin"></i></a>
-                            <a href="mailto:c_sarathchandran@ch.amrita.edu" aria-label="Email Dr. Sarathchandran C"><i class="fas fa-envelope"></i></a>
-                            <button class="btn btn-primary more-details" data-modal="sarathModal">More Details</button>
-                        </div>
-                    </div>
-                </div>
-        
+    <section id="team" class="team-section section py-16 md:py-24 bg-[#d92842] text-white">
+        <div class="container mx-auto max-w-7xl px-4">
+            <div class="section-title text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Our Team</h2>
+                <div class="divider w-20 h-1 bg-[#fdd835] mx-auto mb-6"></div>
+                <p class="text-lg text-gray-200 max-w-3xl mx-auto">Meet the brilliant minds driving our research forward.</p>
             </div>
             
-            <div class="students-grid">
-                <h2 style="color: #fff;">Students</h2>
-                    
-              <div class="team-grid">
-                <div class="team-card animate-slide-left">
-                    <img src="img/vin.jpg"                  alt="Vino Bharathi">
-                    <div class="content">
-                        <h3>Vino Bharathi G</h3>
-                        <p class="role">PhD Student</p>
-                        <p>Wastewater purification.</p>
-                        <div class="social-links">
-                            <a href="https://www.linkedin.com/in/vino-bharathi-b3699726a" aria-label="LinkedIn profile of Vino Bharathi"><i class="fab fa-linkedin"></i></a>
-                            <a href="mailto:g_vinobharathi@ch.amrita.edu" aria-label="Email Vino Bharathi"><i class="fas fa-envelope"></i></a>
+            <!-- Principal Investigator -->
+            <div class="team-grid grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-center">
+                <div class="team-card animate-slide-left bg-black/20 rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 md:col-start-2 lg:col-start-2">
+                    <img src="img/SC.jpg" alt="Dr. Sarathchandran C" class="w-full h-80 object-cover"
+                         onerror="this.onerror=null; this.src='https://placehold.co/400x400/333/FFFFFF?text=Dr.+S.C.';">
+                    <div class="content p-6">
+                        <h3 class="text-2xl font-bold text-white mb-1">Dr. Sarathchandran C</h3>
+                        <p class="role text-yellow-300 font-medium mb-3">Centre Head - MCRL</p>
+                        <p class="text-gray-200 text-sm mb-4">Polymers, Aerogels, Li-ion batteries, Hydrogen storage devices, Electrospinning, Carbon capture and conversion.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="social-links flex gap-4">
+                                <a href="https://www.linkedin.com/in/sarathchandran-c-7b581856" aria-label="LinkedIn" class="text-2xl text-white hover:text-yellow-300 transition-colors"><i class="fab fa-linkedin"></i></a>
+                                <a href="mailto:c_sarathchandran@ch.amrita.edu" aria-label="Email" class="text-2xl text-white hover:text-yellow-300 transition-colors"><i class="fas fa-envelope"></i></a>
+                            </div>
+                            <button class="btn bg-white/20 text-white px-4 py-2 rounded-md font-medium transition-all duration-300 hover:bg-white hover:text-[#d92842] more-details" data-modal="sarathModal">More Details</button>
                         </div>
                     </div>
                 </div>
-                <div class="team-card animate-slide-left">
-                    <img src="img/job.jpg"
-                         
-                         alt="Job M Skaria">
-                    <div class="content">
-                        <h3>Job M Skaria</h3>
-                        <p class="role">PhD Student</p>
-                        <p>Porous material, Energy storage, CO2 capture, Solid electrolytes, SERS.</p>
-                        <div class="social-links">
-                            <a href="https://www.linkedin.com/in/job-m-skaria-6194621a2" aria-label="LinkedIn profile of Job M Skaria"><i class="fab fa-linkedin"></i></a>
-                            <a href="mailto:j_skaria@ch.students.amrita.edu" aria-label="Email Job M Skaria"><i class="fas fa-envelope"></i></a>
+            </div>
+
+            <!-- Students Section -->
+            <div class="students-grid mt-20">
+                <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-12">Students</h2>
+                <div class="team-grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+                    <!-- Student 1 -->
+                    <div class="team-card animate-slide-left bg-black/20 rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+                        <img src="img/vin.jpg" alt="Vino Bharathi G" class="w-full h-64 object-cover"
+                             onerror="this.onerror=null; this.src='https://placehold.co/400x400/444/FFFFFF?text=V.B.G';">
+                        <div class="content p-6">
+                            <h3 class="text-xl font-bold text-white mb-1">Vino Bharathi G</h3>
+                            <p class="role text-yellow-300 font-medium mb-3">PhD Student</p>
+                            <p class="text-gray-200 text-sm mb-4">Wastewater purification.</p>
+                            <div class="social-links flex gap-4">
+                                <a href="https://www.linkedin.com/in/vino-bharathi-b3699726a" aria-label="LinkedIn" class="text-2xl text-white hover:text-yellow-300 transition-colors"><i class="fab fa-linkedin"></i></a>
+                                <a href="mailto:g_vinobharathi@ch.amrita.edu" aria-label="Email" class="text-2xl text-white hover:text-yellow-300 transition-colors"><i class="fas fa-envelope"></i></a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="team-card animate-slide-left">
-                    <img src="img/ath.jpg"
-                         
-                         alt="Athiralal M S">
-                    <div class="content">
-                        <h3>Athiralal M S</h3>
-                        <p class="role">PhD Student</p>
-                        <p>Electrochemical reduction of CO2, Hydrogen evolution reaction, Electrochemical sensors.</p>
-                        <div class="social-links">
-                            <a href="https://www.linkedin.com/in/athiralalms" aria-label="LinkedIn profile of Athiralal M S"><i class="fab fa-linkedin"></i></a>
-                            <a href="mailto:ms_athiralal@ch.students.amrita.edu" aria-label="Email Athiralal M S"><i class="fas fa-envelope"></i></a>
+                    <!-- Student 2 -->
+                    <div class="team-card animate-slide-right bg-black/20 rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+                        <img src="img/job.jpg" alt="Job M Skaria" class="w-full h-64 object-cover"
+                             onerror="this.onerror=null; this.src='https://placehold.co/400x400/444/FFFFFF?text=J.M.S';">
+                        <div class="content p-6">
+                            <h3 class="text-xl font-bold text-white mb-1">Job M Skaria</h3>
+                            <p class="role text-yellow-300 font-medium mb-3">PhD Student</p>
+                            <p class="text-gray-200 text-sm mb-4">Porous material, Energy storage, CO2 capture, Solid electrolytes, SERS.</p>
+                            <div class="social-links flex gap-4">
+                                <a href="https://www.linkedin.com/in/job-m-skaria-6194621a2" aria-label="LinkedIn" class="text-2xl text-white hover:text-yellow-300 transition-colors"><i class="fab fa-linkedin"></i></a>
+                                <a href="mailto:j_skaria@ch.students.amrita.edu" aria-label="Email" class="text-2xl text-white hover:text-yellow-300 transition-colors"><i class="fas fa-envelope"></i></a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="team-card animate-slide-left">
-                    <img src="img/rmy.jpg"
-                         
-                         alt="Remya V Raj">
-                    <div class="content">
-                        <h3>Remya V Raj</h3>
-                        <p class="role">PhD Student</p>
-                        <p>Design and Development of Metamaterials for Microwave absorption, Corrosion.</p>
-                        <div class="social-links">
-                            <a href="www.linkedin.com/in/remya-v-raj-200814265" aria-label="LinkedIn profile of Remya V Raj"><i class="fab fa-linkedin"></i></a>
-                            <a href="mailto:vr_remya@ch.students.amrita.edu" aria-label="Email Remya V Raj"><i class="fas fa-envelope"></i></a>
+                    <!-- Student 3 -->
+                    <div class="team-card animate-slide-left bg-black/20 rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+                        <img src="img/ath.jpg" alt="Athiralal M S" class="w-full h-64 object-cover"
+                             onerror="this.onerror=null; this.src='https://placehold.co/400x400/444/FFFFFF?text=A.M.S';">
+                        <div class="content p-6">
+                            <h3 class="text-xl font-bold text-white mb-1">Athiralal M S</h3>
+                            <p class="role text-yellow-300 font-medium mb-3">PhD Student</p>
+                            <p class="text-gray-200 text-sm mb-4">Electrochemical reduction of CO2, Hydrogen evolution reaction, Electrochemical sensors.</p>
+                            <div class="social-links flex gap-4">
+                                <a href="https://www.linkedin.com/in/athiralalms" aria-label="LinkedIn" class="text-2xl text-white hover:text-yellow-300 transition-colors"><i class="fab fa-linkedin"></i></a>
+                                <a href="mailto:ms_athiralal@ch.students.amrita.edu" aria-label="Email" class="text-2xl text-white hover:text-yellow-300 transition-colors"><i class="fas fa-envelope"></i></a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="team-card animate-slide-left">
-                    <img src="img/prb.jpg"
-                         
-                         alt="Prabu">
-                    <div class="content">
-                        <h3>B Prabu</h3>
-                        <p class="role">Lab Technician</p>
-                        <p></p>
-                        <div class="social-links">
-                            <a href="mailto:b_prabu@ch.amrita.edu" aria-label="Email B Prabu"><i class="fas fa-envelope"></i></a>
+                    <!-- Student 4 -->
+                    <div class="team-card animate-slide-right bg-black/20 rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+                        <img src="img/rmy.jpg" alt="Remya V Raj" class="w-full h-64 object-cover"
+                             onerror="this.onerror=null; this.src='https://placehold.co/400x400/444/FFFFFF?text=R.V.R';">
+                        <div class="content p-6">
+                            <h3 class="text-xl font-bold text-white mb-1">Remya V Raj</h3>
+                            <p class="role text-yellow-300 font-medium mb-3">PhD Student</p>
+                            <p class="text-gray-200 text-sm mb-4">Design and Development of Metamaterials for Microwave absorption, Corrosion.</p>
+                            <div class="social-links flex gap-4">
+                                <a href="https://www.linkedin.com/in/remya-v-raj-200814265" aria-label="LinkedIn" class="text-2xl text-white hover:text-yellow-300 transition-colors"><i class="fab fa-linkedin"></i></a>
+                                <a href="mailto:vr_remya@ch.students.amrita.edu" aria-label="Email" class="text-2xl text-white hover:text-yellow-300 transition-colors"><i class="fas fa-envelope"></i></a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                    
+                    <!-- Student 5 -->
+                    <div class="team-card animate-slide-left bg-black/20 rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+                        <img src="img/prb.jpg" alt="B Prabu" class="w-full h-64 object-cover"
+                             onerror="this.onerror=null; this.src='https://placehold.co/400x400/444/FFFFFF?text=B.P';">
+                        <div class="content p-6">
+                            <h3 class="text-xl font-bold text-white mb-1">B Prabu</h3>
+                            <p class="role text-yellow-300 font-medium mb-3">Lab Technician</p>
+                            <p class="text-gray-200 text-sm mb-4 h-10"></p> <!-- Empty p for alignment -->
+                            <div class="social-links flex gap-4">
+                                <a href="mailto:b_prabu@ch.amrita.edu" aria-label="Email" class="text-2xl text-white hover:text-yellow-300 transition-colors"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
     
-    <!-- Opportunities Section -->
-<section id="opportunities" class="opportunities-section">
-  <div class="container">
-    <h2>Opportunities</h2>
-    <p>
-      We are always looking for passionate researchers and students to join our lab.  
-      Check below for current openings and opportunities.
-    </p>
-<!-- Container for the alert -->
-    <div id="alertContainer"></div>
-    <div class="opportunity-list">
-      <div class="opportunity team-card animate-slide-right">
-        <h3>Research Assistant</h3>
-        <p>We are hiring a Research Assistant with background in Materials Chemistry.</p>
-        <a href="https://forms.gle/7tH7PQfxdbsH9avd8" class="btn btn-primary" data-status="open">Apply Now</a>
-      </div>
+    <!-- Modal for Dr. Sarathchandran -->
+    <div id="sarathModal" class="modal hidden fixed z-[1000] left-0 top-0 w-full h-full bg-black/80 justify-center items-center p-4">
+      <div class="modal-content bg-white p-6 md:p-8 rounded-lg w-full max-w-4xl max-h-[90vh] overflow-y-auto relative shadow-2xl">
+        <!-- Close Button -->
+        <span class="close absolute top-4 right-5 text-4xl text-gray-500 cursor-pointer hover:text-black">&times;</span>
 
-      <div class="opportunity team-card animate-slide-left">
-        <h3>PhD Positions</h3>
-        <p>Applications are invited for PhD positions in nanomaterials and energy storage.</p>
-        <a href="mailto:lab@email.com" class="btn btn-primary" data-status="closed">Apply Now</a>
-      </div>
+        <!-- Tab Buttons -->
+        <div class="tabs flex flex-wrap gap-4 mb-6 border-b border-gray-200 pb-4">
+          <button class="tab-link active px-5 py-2 rounded-md font-medium bg-gray-200 text-gray-700 transition-all duration-300" data-tab="papers">Research Papers</button>
+          <button class="tab-link px-5 py-2 rounded-md font-medium bg-gray-200 text-gray-700 transition-all duration-300" data-tab="books">Books</button>
+          <button class="tab-link px-5 py-2 rounded-md font-medium bg-gray-200 text-gray-700 transition-all duration-300" data-tab="chapters">Book Chapters</button>
+          <button class="tab-link px-5 py-2 rounded-md font-medium bg-gray-200 text-gray-700 transition-all duration-300" data-tab="patents">Patents</button>
+        </div>
 
-      <div class="opportunity team-card animate-slide-right">
-        <h3>Internships</h3>
-        <p>Summer internship opportunities available for undergraduate and postgraduate students.</p>
-        <a href="#" class="btn btn-primary" data-status="closed">Apply Now</a>
+        <!-- Research Papers -->
+        <div class="tab-content active text-gray-700" id="papers">
+          <ol class="publication-list">
+              <li>Block co-polymer of Epoxy resin and Poly(trimethylene terephthalate): Preparation, characterization and properties – Sarathchandran C, S Thomas, R Shanks (WaggaWagga 2013) (peer-reviewed article)</li>
+              <li>Non-isothermal crystallization kinetics of Poly(Lactic acid)- Hemp fibre nanocomposite – I. R. Mustapa, Sarathchandran C, R A Shanks (WaggaWagga 2013) (peer-reviewed article)</li>
+              <li>Stereochemistry and Miscibility of Epoxy Resin-Poly (trimethylene terephthalate) Blends (2014) – Sarathchandran C, Antolaisic F, Eichhorn K J, Robert A Shanks and S Thomas, RSC Adv., 4, 25420-25429.</li>
+              <li>Effect of elongation flow on the morphology of DGEBA- Poly(trimethylene terephthalate) blend system (2014) – Sarathchandran C, R Muller M Bouquey, C Melart, S Thomas, Polymer Engineering and Science, 55, 1679-1688.</li>
+              <li>Interfacial interactions of thermally reduced graphene in poly(trimethylene terephthalate)-epoxy resin based composites (2016) – Sarathchandran C, Michael Czajka, C. H. Chan, Robert A. Shanks, Sabu Thomas, POLYMER, 106, 140-151.</li>
+              <li>Novel poly(glycidyl methacrylate)-grafted clay nanofiller for highly transparent and mechanically robust epoxy composites (2015) – Khouloud Jlassi, Sarathchandran C, et al., European Polymer Journal, 72:89–101</li>
+              <li>Polyaniline-Clay hybrids through diazonium interface chemistry: conductive nanofiller for epoxy matrix nanocomposites (2016) – Khouloud Jlassi, Sarathchandran C, et al., Langmuir, 32(14):3514-24</li>
+              <li>Effect of Reinforcement on the Barrier and Dielectric Properties of Epoxidized Natural Rubber–Graphene Nanocomposites (2015) – Srinivasarao Yaragalla, C. Sarathchandran, et al., Polymer Engineering and Science, 55, 11, 2349-2447.</li>
+              <li>Compatibilizing Action and Localization of Clay in Polypropylene/Natural Rubber (PP/NR) Blend (2015) – Nithin Chandran, Sarathchandran C., Hanna J. Maria, Sabu Thomas, RSC Adv., 5, 86265-86273.</li>
+              <li>Segmental dynamics, morphology, and thermomechanical properties of electrospun poly(ε- caprolactone) nanofibers in presence of an interacting filler (2016) – Eldho Elias, Sarathchandran C., et al., RSC Adv., 6, 21376-21386.</li>
+              <li>Percolated Network Formation in Biocidal 3D Porous PCL/Clay Nanocomposite Scaffolds: Effect of organic modifier on Interfacial and Water Sorption Properties (2016) – Eldho Elias, Sarathchandran C., Ajesh K. Zachariah, Sunil M. A., Vineesh Kumar, Suryasarthi Bose, Fernando G. Souza, Sabu Thomas, RSC Adv., 6, 85107- 85116.</li>
+              <li>Effect of electron beam irradiation on thermal and mechanical properties of aluminum based epoxy composites (2017) – P. M. Visakh, Olga B. Nazarenko, C. Sarathchandran, Tatnya V. Melnikova, Svetlana Yu Nazarenko, J. C. Kim- Radiation Physics and Chemistry, 136, 17-22.</li>
+              <li>Mechanism of phase separation in a weakly interacting system with strong dynamic asymmetry (2017) – Sarathchandran C., Antolasic F., Robert A. Shanks, Sabu Thomas, Journal of Applied Polymer Science, 134, 28, 45059-45068.</li>
+              <li>Multiwalled carbon nanotube promotes crystallisation while preserving co-continuous phase morphology of polycarbonate/polypropylene blend (2017) – Mohammed Arif P, Sarathchandran C., Aravinda Narayanan, Allisson Saiter, Roberto Terzano, Ignazio Allegretta, Carlo Porfido, Nandakkumar Kalarikkal, Sabu Thomas- Polymer Testing, 64, 1-11.</li>
+              <li>Microstructure and phase evolution in pyrolysed short fibre reinforced polymethyl silsesquioxane-phenolic interpenetrating networks (2018) – Ancy Smitha Alex, Bhuvaneswari S., Sarathchandran C., Jayalatha T., Sekkar V., Gouri C., Journal of Analytical and Applied Pyrolysis, 129, 241-247.</li>
+              <li>Crystallization kinetics, morphology and spherulite growth in poly(trimethylene terephthalate) modified with bisphenol-A diglycidyl ether (2019) – C. Sarathchandran, Li Ziang, Robert A. Shanks, C. H. Chan, V. Sekkar, Sabu Thomas- Journal of Thermal Analysis and Calorimetry, 24, 1-11.</li>
+              <li>Organic modifier induced interfacial transformation, morphology and physico-mechanical properties of PP/NR based blend nanocomposites (2020) – N Chandran, C Sarathchandran, S Jose, S Thankappan, S Thomas- Composites Part B: Engineering, 194, 108045.</li>
+              <li>Photoassisted degradation of rhodamine B using poly(ε-caprolactone) based nanocomposites: mechanistic and kinetic features (2021) – E Elias, C Sarathchandran, S Joseph, A K Zachariah, J Thomas, D Devadasan, F G Souza Jr, S Thomas- Journal of Applied Polymer Science, 138, 26, 50612.</li>
+              <li>Micro-cellular polymer foam supported silica aerogel: Eco-friendly tool for petroleum oil spill cleanup (2021) – P.K. Renjith, C. Sarathchandran, V. Sivanandan Achary, N. Chandramohanakumar, V. Sekkar- Journal of Hazardous Materials, 415, 125548.</li>
+              <li>Quantifying morphological and mechanical properties of thermoplastics elastomers by selective localization of nanofillers with different geometries (2021) – NithinChandran, Sarathchandran C, Anjaly Sivadas, Allisson Saiter-Fourcin, Sabu Thomas- Colloids and Surfaces A: Physicochemical and Engineering Aspects, 629, 127365.</li>
+              <li>Interfacial interaction in polypropylene-natural rubber blends: role of natural rubber on morphological, rheological, and mechanical evolution (2021) – Nithin Chandran, Sarathchandran C, Anjaly Sivadas & Sabu Thomas- Journal of Polymer Research, 29, 24, 2873.</li>
+              <li>Silica aerogel composite with inherent superparamagnetic property: a pragmatic and ecofriendly approach for oil spill clean-up under harsh conditions (2023) – P.K. Renjith, C. Sarathchandran, Chandramohanakumar N, V. Sekkar- Materials Today Sustainability, 24, 100498.</li>
+              <li>Synthesis, characterization and study of electrochemical applicability of novel asymmetrically substituted 1, 3-dialkyl-1, 2, 3-benzotriazolium salts for supercapacitor fabrication (2023) – Anjitha Satheesh, Punnakkal Navaneeth, Punathil Vasu Suneesh, C Sarathchandran, Elango Kandasamy- RSC Advances, 13, 14737.</li>
+          </ol>
+        </div>
+
+        <!-- Books -->
+        <div class="tab-content hidden text-gray-700" id="books">
+          <ol class="publication-list">
+              <li>Special Issue in Composite Interfaces, Composite Interfaces, Vol. 17, No. 2-3., pp. 83-84. doi:10.1163/092764410X49070</li>
+              <li>Polyoxymethylene and their nanocomposites: Structure, Properties and Applications – Sigrid Luftl, Visakh P. M, Sarathchandran C, Scrivener Publishing and John Wiley and Sons Ltd.</li>
+              <li>Nanostructured Polymer Blends – Sarathchandran C, Sabu Thomas, Robert A. Shanks, Elsevier Publishing (U.K.)</li>
+              <li>Design and Applications of Nanostructured Polymer Blends and Nanocomposite Systems – Sarathchandran C, R. A. Shanks, S. Thomas, Elsevier Publishing (U.K.)</li>
+              <li>Organic Farming – 1st Edition, Global Perspectives and Methods, Sarathchandran C, Unni M.R, Sabu Thomas, eBook ISBN: 9780128132739, Elsevier Inc.</li>
+              <li>Organic Farming: New Advances Towards Sustainable Agricultural Systems – Sarathchandran C, Thomas Sabu, Unni M. R., ISBN 978-3-030-04657-6, Springer International Publishing</li>
+              <li>Rheology of Polymer Blends and Nanocomposites, 1st Edition, Theory, Modelling and Applications – Sarathchandran C., Nithin Chandran, Sabu Thomas, Paperback ISBN: 9780128169575, Elsevier Inc.</li>
+              <li>Handbook of Carbon-based Nanomaterials – Sarathchandran C., Sabu Thomas, Ilangovan S. A., Piranjan J. C. M., Elsevier Inc., Paperback ISBN: 9780128219966</li>
+              <li>Organic Farming Global Perspectives and Methods, 2nd Edition – Sarathchandran C, Unni M.R., Sabu Thomas, D K Meena, eBook ISBN: 9780323991469</li>
+          </ol>
+        </div>
+        
+        <!-- Book Chapters -->
+        <div class="tab-content hidden text-gray-700" id="chapters">
+          <ol class="publication-list" type="i">
+              <li>Poly(trimethylene terephthalate) – The next generation engineering thermoplastic – Sarathchandran C, Chin Han Chan, Siti Rozana Bt. Abd. Karim, Sabu Thomas, Physical Chemistry of Macromolecules, Apple Academic Press, ISBN-13: 978-1926895642.</li>
+              <li>Polymer Blends – Sarathchandran C, Robert A. Shanks, Sabu Thomas, Nanostructured Polymer Blends, Elsevier Inc.</li>
+              <li>Rheology: An Introduction – Sarathchandran C., Nithin Chandran, Sabu Thomas, Rheology of Polymer Blends and Nanocomposites, 1st edition, Theory, Modelling and Applications, ISBN: 9780128169575, Elsevier Inc. (2019).</li>
+              <li>Interfacial Characterization using Rheology – Sarathchandran C., Rheology of Polymer Blends and Nanocomposites, 1st edition, Theory, Modelling and Applications, ISBN: 9780128169575, Elsevier Inc. (2019).</li>
+              <li>Rheology of Polymer-Clay Nanocomposites – Sarathchandran C., Nithin Chandran, Sabu Thomas, Rheology of Polymer Blends and Nanocomposites, 1st edition, Theory, Modelling and Applications, ISBN: 9780128169575, Elsevier Inc. (2019).</li>
+              <li>Pesticides: Classification, Detection, and Degradation – Sarathchandran C., Unni M. R., Sabu Thomas, Organic Farming: New Advances Towards Sustainable Agricultural Systems, ISBN: 978-3-030-04657-6, Springer International Publishing.</li>
+              <li>Preparation and Applications of Silica Aerogels – Sarathchandran C., Ranjith P. K., Sekkar V., Engineering of Natural Polymeric Gels and Aerogels for Multifunctional Applications, Elsevier Inc.</li>
+              <li>Introduction to Carbon Materials – Sarathchandran C., Sabu Thomas, Ilangovan S. A., Handbook of Carbon-based Nanomaterials (2021), Elsevier Inc., Paperback ISBN: 9780128219966.</li>
+              <li>Graphene: The Magic Material – Antony Joseph, Sujith V., Sarathchandran C., Handbook of Carbon-based Nanomaterials (2021), Elsevier Inc., Paperback ISBN: 9780128219966.</li>
+              <li>Carbon Aerogel: Synthesis, Properties, and Applications – Sarathchandran C., Devika M. R., Swetha Prakash, Sujatha S, Ilangovan S. A., Handbook of Carbon-based Nanomaterials (2021), Elsevier Inc., Paperback ISBN: 9780128219966.</li>
+              <li>Activated Carbon: Synthesis, Properties, and Applications – Sarathchandran C., Ilangovan S. A., Handbook of Carbon-based Nanomaterials (2021), Elsevier Inc., Paperback ISBN: 9780128219966.</li>
+          </ol>
+        </div>
+
+        <!-- Patents -->
+        <div class="tab-content hidden text-gray-700" id="patents">
+          <ul class="publication-list">
+            <li>Process of Preparing Silica Aerogel Felt Composites – 202241019700 (2022)</li>
+            <li>Eco-friendly route for synthesis of carbon aerogels – 202341062434 (2023)</li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+    
+    <!-- Opportunities Section -->
+    <section id="opportunities" class="opportunities-section section py-16 md:py-24 bg-white">
+      <div class="container mx-auto max-w-7xl px-4 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-[#c2185b] mb-4">Opportunities</h2>
+        <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-16">
+          We are always looking for passionate researchers and students to join our lab.  
+          Check below for current openings and opportunities.
+        </p>
+        
+        <!-- Container for the alert -->
+        <div id="alertContainer" class="fixed top-20 left-1/2 -translate-x-1/2 z-[1100] w-full max-w-md px-4"></div>
+
+        <div class="opportunity-list grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Opportunity 1 -->
+          <div class="opportunity team-card animate-slide-right bg-gray-50 p-8 rounded-lg shadow-md border border-gray-200 text-left transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+            <h3 class="text-2xl font-bold text-[#c2185b] mb-3">Research Assistant</h3>
+            <p class="text-gray-700 mb-6">We are hiring a Research Assistant with background in Materials Chemistry.</p>
+            <a href="https://forms.gle/7tH7PQfxdbsH9avd8" target="_blank" class="btn-primary inline-block bg-[#d92842] text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:bg-[#c2185b] hover:shadow-lg transform hover:-translate-y-1" data-status="open">Apply Now</a>
+          </div>
+
+          <!-- Opportunity 2 -->
+          <div class="opportunity team-card animate-slide-left bg-gray-50 p-8 rounded-lg shadow-md border border-gray-200 text-left transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+            <h3 class="text-2xl font-bold text-[#c2185b] mb-3">PhD Positions</h3>
+            <p class="text-gray-700 mb-6">Applications are invited for PhD positions in nanomaterials and energy storage.</p>
+            <a href="mailto:lab@email.com" class="btn-primary inline-block bg-gray-400 text-white px-6 py-3 rounded-lg font-medium cursor-not-allowed" data-status="closed">Apply Now</a>
+          </div>
+
+          <!-- Opportunity 3 -->
+          <div class="opportunity team-card animate-slide-right bg-gray-50 p-8 rounded-lg shadow-md border border-gray-200 text-left transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+            <h3 class="text-2xl font-bold text-[#c2185b] mb-3">Internships</h3>
+            <p class="text-gray-700 mb-6">Summer internship opportunities available for undergraduate and postgraduate students.</p>
+            <a href="#" class="btn-primary inline-block bg-gray-400 text-white px-6 py-3 rounded-lg font-medium cursor-not-allowed" data-status="closed">Apply Now</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Contact Section -->
-    <section id="contact" class="contact-section section">
-        <div class="container">
-            <div class="section-title ">
-                <h2>Contact Us</h2>
-                <div class="divider"></div>
-                <p>We'd love to hear from you. Reach out for collaborations, inquiries, or to learn more about our work.</p>
+    <section id="contact" class="contact-section section py-16 md:py-24 bg-gray-100">
+        <div class="container mx-auto max-w-7xl px-4">
+            <div class="section-title text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-[#d92842] mb-4">Contact Us</h2>
+                <div class="divider w-20 h-1 bg-[#fdd835] mx-auto mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">We'd love to hear from you. Reach out for collaborations, inquiries, or to learn more about our work.</p>
             </div>
             
-            <div class="contact-grid">
+            <div class="contact-grid grid md:grid-cols-2 gap-8 md:gap-12">
+                <!-- Left Column: Info + Hours -->
                 <div>
-                    <div class="contact-info animate-slide-left">
-                        <h3>Get In Touch</h3>
-                        <div class="info-item">
-                            <div>
-                                <h4><i class="fas fa-map-marker-alt"></i> Address</h4>
-                                <p>Materials Chemistry Research Lab.<br>
-Amrita School of Engineering<br>Amrita Vishwa Vidyapeetham<br>Chennai, Vengal - 601103</p>
+                    <div class="contact-info animate-slide-left bg-white p-8 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-bold text-[#d92842] mb-6">Get In Touch</h3>
+                        <div class="space-y-6">
+                            <div class="info-item flex gap-4">
+                                <i class="fas fa-map-marker-alt text-2xl text-[#d92842] mt-1"></i>
+                                <div>
+                                    <h4 class="text-lg font-bold text-[#d92842] mb-1">Address</h4>
+                                    <p class="text-gray-600">Materials Chemistry Research Lab.<br>
+                                    Amrita School of Engineering<br>Amrita Vishwa Vidyapeetham<br>Chennai, Vengal - 601103</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="info-item">
-                            <div>
-                                <h4><i class="fas fa-envelope"></i> Email</h4>
-                                <p>mcrlamrita2024@gmail.com
+                            <div class="info-item flex gap-4">
+                                <i class="fas fa-envelope text-2xl text-[#d92842] mt-1"></i>
+                                <div>
+                                    <h4 class="text-lg font-bold text-[#d92842] mb-1">Email</h4>
+                                    <p class="text-gray-600">mcrlamrita2024@gmail.com</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="info-item">
-                            <div>
-                                <h4><i class="fas fa-phone"></i> Phone</h4>
-                                <p>+91 9995566043</p>
+                            <div class="info-item flex gap-4">
+                                <i class="fas fa-phone text-2xl text-[#d92842] mt-1"></i>
+                                <div>
+                                    <h4 class="text-lg font-bold text-[#d92842] mb-1">Phone</h4>
+                                    <p class="text-gray-600">+91 9995566043</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="lab-hours">
-                        <h3>Working time</h3>
-                        <ul>
-                            <li><span>Monday - Saturday</span><span>9:00 AM - 5:00 PM</span></li>
-                            
-                            <li><span>Sunday</span><span>Closed</span></li>
+                    <div class="lab-hours animate-slide-left bg-white p-8 rounded-lg shadow-md mt-8">
+                        <h3 class="text-2xl font-bold text-[#d92842] mb-6">Working Time</h3>
+                        <ul class="space-y-3 text-gray-600">
+                            <li class="flex justify-between"><span>Monday - Saturday</span><span class="font-medium text-gray-800">9:00 AM - 5:00 PM</span></li>
+                            <li class="flex justify-between border-t pt-3"><span>Sunday</span><span class="font-medium text-red-600">Closed</span></li>
                         </ul>
                     </div>
                 </div>
-                <div class="map-container ">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15533.597203024403!2d80.0274183!3d13.2629694!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52814946112d6f%3A0x57a644f6f25f9b0c!2sAmrita%20Vishwa%20Vidyapeetham%2C%20Chennai!5e0!3m2!1sen!2sin!4v1755921215028!5m2!1sen!2sin" width="600" height="550" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
                 
+                <!-- Right Column: Map -->
+                <div class="map-container animate-slide-right rounded-lg overflow-hidden shadow-md">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15533.597203024403!2d80.0274183!3d13.2629694!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52814946112d6f%3A0x57a644f6f25f9b0c!2sAmrita%20Vishwa%20Vidyapeetham%2C%20Chennai!5e0!3m2!1sen!2sin!4v1755921215028!5m2!1sen!2sin" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0; min-height: 450px;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
             </div>
-            
-            
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="logo-section">
-                    <div class="logo">            <a href="#" class="logo">
-               <img src="img/logo w.svg" alt="logo">
-            </a>
-                    </div>
-                    <p>Advancing chemical sciences through innovative research and collaboration.</p>
+    <footer class="bg-[#c2185b] text-white pt-16 pb-8">
+        <div class="container mx-auto max-w-7xl px-4">
+            <div class="footer-grid grid md:grid-cols-4 gap-10 mb-12">
+                <!-- Logo Section -->
+                <div class="logo-section space-y-4">
+                    <a href="#" class="logo">
+                       <img src="https" alt="logo" class="h-10 max-h-12"
+                            onerror="this.onerror=null; this.src='https://placehold.co/150x50/c2185b/FFFFFF?text=MCRL+Logo';">
+                    </a>
+                    <p class="text-gray-200">Advancing chemical sciences through innovative research and collaboration.</p>
                 </div>
                 
+                <!-- Quick Links -->
                 <div>
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#research">Research</a></li>
-                        <li><a href="#team">Team</a></li>
+                    <h3 class="text-xl font-bold text-white mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-200 hover:text-yellow-300 transition-colors">Home</a></li>
+                        <li><a href="#about" class="text-gray-200 hover:text-yellow-300 transition-colors">About</a></li>
+                        <li><a href="#research" class="text-gray-200 hover:text-yellow-300 transition-colors">Research</a></li>
+                        <li><a href="#team" class="text-gray-200 hover:text-yellow-300 transition-colors">Team</a></li>
                     </ul>
                 </div>
                 
+                <!-- Resources -->
                 <div>
-                    <h3>Resources</h3>
-                    <ul>
-                        <li><a href="/publications">Publications</a></li>
-                        <li><a href="/news">News</a></li>
+                    <h3 class="text-xl font-bold text-white mb-4">Resources</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-200 hover:text-yellow-300 transition-colors">Publications</a></li>
+                        <li><a href="#" class="text-gray-200 hover:text-yellow-300 transition-colors">News</a></li>
                     </ul>
                 </div>
                 
-                <div class="newsletter">
-                    <h3>Connect With Us</h3>
-                 
-                    <div class="footer-social">
-  <a href="https://www.facebook.com/AmritaUniversity" target="_blank">
-    <i class="fab fa-facebook"></i>
-  </a>
-
-  <a href="https://twitter.com/AMRITAedu" target="_blank">
-    <i class="fab fa-twitter"></i>
-  </a>
-
-  <a href="https://www.youtube.com/user/AmritaUniversity" target="_blank">
-    <i class="fab fa-youtube"></i>
-  </a>
-
-  <a href="https://www.linkedin.com/school/amrita-vishwa-vidyapeetham-official/" target="_blank">
-    <i class="fab fa-linkedin"></i>
-  </a>
-</div>    
+                <!-- Connect -->
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-4">Connect With Us</h3>
+                    <div class="footer-social flex gap-5">
+                        <a href="https://www.facebook.com/AmritaUniversity" target="_blank" class="text-3xl text-white hover:text-yellow-300 transition-colors"><i class="fab fa-facebook"></i></a>
+                        <a href="https://twitter.com/AMRITAedu" target="_blank" class="text-3xl text-white hover:text-yellow-300 transition-colors"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.youtube.com/user/AmritaUniversity" target="_blank" class="text-3xl text-white hover:text-yellow-300 transition-colors"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.linkedin.com/school/amrita-vishwa-vidyapeetham-official/" target="_blank" class="text-3xl text-white hover:text-yellow-300 transition-colors"><i class="fab fa-linkedin"></i></a>
+                    </div>    
                 </div>
             </div>
             
-            <div class="footer-bottom">
+            <!-- Footer Bottom -->
+            <div class="footer-bottom border-t border-[#d92842] pt-8 text-center text-gray-200">
                 <p>© <span id="current-year"></span> Amrita Vishwa. All rights reserved.</p>
             </div>
         </div>
     </footer>
-    <script src="script.js"></script>
+    
+    <!-- JavaScript File -->
+    <script src="script.js" defer></script>
 </body>
 </html>
+
+
